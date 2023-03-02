@@ -23,9 +23,10 @@ class SlideRight extends PageRouteBuilder {
               //   scale: tween.animate(curvesAnimation),
               //   child: child,
               // );
-              return FadeTransition(
-                opacity: animation,
+              return Align(
+                  child: SizeTransition(
+                sizeFactor: animation,
                 child: child,
-              );
+              ));
             });
 }
