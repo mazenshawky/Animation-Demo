@@ -8,9 +8,9 @@ class SlideRight extends PageRouteBuilder {
             transitionsBuilder: (context, animation, animationtwo, child) {
               // var tween =
               //     Tween(begin: const Offset(1, 0), end: const Offset(0, 0));
-              var tween = Tween(begin: 0.0, end: 1.0);
-              var curvesAnimation =
-                  CurvedAnimation(parent: animation, curve: Curves.easeInOut);
+              // var tween = Tween(begin: 0.0, end: 1.0);
+              // var curvesAnimation =
+              //     CurvedAnimation(parent: animation, curve: Curves.easeInOut);
               // return SlideTransition(
               //   position: tween.animate(curvesAnimation),
               //   child: child,
@@ -19,9 +19,14 @@ class SlideRight extends PageRouteBuilder {
               //   turns: tween.animate(curvesAnimation),
               //   child: child,
               // );
-              return ScaleTransition(
-                scale: tween.animate(curvesAnimation),
+              // return ScaleTransition(
+              //   scale: tween.animate(curvesAnimation),
+              //   child: child,
+              // );
+              return Align(
+                  child: SizeTransition(
+                sizeFactor: animation,
                 child: child,
-              );
+              ));
             });
 }
